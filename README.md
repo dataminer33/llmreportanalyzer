@@ -2,7 +2,7 @@
 Preview
 
 ## Overview
-This Streamlit application provides an interactive tool to analyze and extract insights from PDF reports using OpenAI's large language models (LLMs). It is designed for automated report analysis and QA tasks, offering a user-friendly interface to facilitate in-depth exploration of report contents.
+This Streamlit application provides an interactive tool to analyze and extract insights from PDF reports using OpenAI or Meta's large language models (LLMs). It is designed for automated report analysis and QA tasks, offering a user-friendly interface to facilitate in-depth exploration of report contents.
 
 ## Features
 
@@ -27,7 +27,7 @@ Tailor the analysis according to your needs by adjusting settings and parameters
    - Explore the results through various visualizations provided by the application. These include extracted text, key points, summaries, and trend analysis.
 
 ## Data Source
-The application processes PDF reports uploaded by the user. It uses OpenAI's API to perform the analysis.
+The application processes PDF reports uploaded by the user. It uses OpenAI's API to perform the analysis or Huggingface's API paired with the [LLama3 8B Instruct model](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct).
 
 ## Installation
 
