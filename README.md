@@ -1,4 +1,4 @@
-# llmReportAnalyzer
+# LLmReportAnalyzer
 Preview
 
 ## Overview
