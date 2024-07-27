@@ -134,7 +134,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 if "pdf_qa_model" not in st.session_state:
-    st.session_state["pdf_qa_model"]:PdfQA = PdfQA()  # Initialisation
+    st.session_state["pdf_qa_model"]:PdfQA = PdfQA(openai_api_key=OPENAI_API_KEY, huggingface_api_key=HUGGINGFACE_API_KEY)  # Initialisation
 
 #@st.cache_resource
 def load_llm(llm):
