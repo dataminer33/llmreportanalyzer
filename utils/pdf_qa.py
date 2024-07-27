@@ -33,8 +33,8 @@ class PdfQA:
         return HuggingFaceEmbeddings(model_name=EMB_BAAI_V15_LARGE, model_kwargs={"device": device})
  
 
-    @classmethod
-    def create_llama3_8B_instruct(cls,temp = 0.01, max_new_tokens = 128):
+    #@classmethod
+    def create_llama3_8B_instruct(temp = 0.01, max_new_tokens = 128):
         return HuggingFaceEndpoint(huggingfacehub_api_token=self.huggingface_api_key,
                      repo_id=LLM_LLAMA3_INSTRUCT, temperature=temp, max_new_tokens=max_new_tokens)
 
