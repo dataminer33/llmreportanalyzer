@@ -15,14 +15,15 @@ import streamlit as st
 
 class PdfQA:
     def __init__(self,openai_api_key, huggingface_api_key, config:dict = {}):
+        self.openai_api_key = openai_api_key
+        self.huggingface_api_key = huggingface_api_key
         self.config = config
         self.embedding = None
         self.vectordb = None
         self.llm = None
         self.qa = None
         self.retriever = None
-        self.openai_api_key = openai_api_key
-        self.huggingface_api_key = huggingface_api_key
+
 
     # The following class methods are useful to create global GPU model instances
     # This way we don't need to reload models in an interactive app,
