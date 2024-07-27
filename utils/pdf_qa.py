@@ -14,7 +14,7 @@ import streamlit as st
 
 
 class PdfQA:
-    def __init__(self,openai_api_key, huggingface_api_key,config:dict = {}):
+    def __init__(self,openai_api_key, huggingface_api_key, config:dict = {}):
         self.config = config
         self.embedding = None
         self.vectordb = None
@@ -27,16 +27,11 @@ class PdfQA:
     # The following class methods are useful to create global GPU model instances
     # This way we don't need to reload models in an interactive app,
     # and the same model instance can be used across multiple user sessions
-    #@classmethod
+    @classmethod
     def create_baai_large():
         device = "cuda" if torch.cuda.is_available() else "cpu"
         return HuggingFaceEmbeddings(model_name=EMB_BAAI_V15_LARGE, model_kwargs={"device": device})
  
-    
-    #@classmethod
-    def create_openai_ada():
-        return OpenAIEmbeddings()
-
 
     @classmethod
     def create_llama3_8B_instruct(cls,temp = 0.01, max_new_tokens = 128):
@@ -61,15 +56,6 @@ class PdfQA:
         else:
             raise ValueError("Invalid config") 
                
-
-
-    def reset(self):
-        self.embedding = None
-        self.vectordb = None
-        self.llm = None
-        self.qa = None
-        self.retriever = None
-        self.config = {}
 
     
     def vector_db_pdf(self) -> None:
