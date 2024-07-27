@@ -14,14 +14,15 @@ import streamlit as st
 
 
 class PdfQA:
-    def __init__(self,config:dict = {}):
+    def __init__(self,config:dict = {},openai_api_key, huggingface_api_key):
         self.config = config
         self.embedding = None
         self.vectordb = None
         self.llm = None
         self.qa = None
         self.retriever = None
-        self.api_key = None
+        self.openai_api_key = openai_api_key
+        self.huggingface_api_key = huggingface_api_key
 
     # The following class methods are useful to create global GPU model instances
     # This way we don't need to reload models in an interactive app,
@@ -39,7 +40,7 @@ class PdfQA:
 
     @classmethod
     def create_llama3_8B_instruct(cls,temp = 0.01, max_new_tokens = 128):
-        return HuggingFaceEndpoint(huggingfacehub_api_token=HUGGINGFACE_KEY,
+        return HuggingFaceEndpoint(huggingfacehub_api_token=self.huggingface_api_key,
                      repo_id=LLM_LLAMA3_INSTRUCT, temperature=temp, max_new_tokens=max_new_tokens)
 
 
@@ -52,7 +53,7 @@ class PdfQA:
     def init_models(self) -> None:
         """ Initialize LLM models based on config """
         if (self.config["llm"] == LLM_OPENAI_GPT35) or (self.config["llm"] == LLM_OPENAI_GPT4O) or (self.config["llm"] == LLM_OPENAI_GPT4O_MINI):
-            openai.api_key = OPENAI_API_KEY
+            openai.api_key = self.openai_api_key
             pass
         elif self.config["llm"] == LLM_LLAMA3_INSTRUCT:
             if self.llm is None:
