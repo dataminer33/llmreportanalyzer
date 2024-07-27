@@ -53,7 +53,7 @@ class PdfQA:
             pass
         elif self.config["llm"] == LLM_LLAMA3_INSTRUCT:
             if self.llm is None:
-                self.llm = PdfQA.create_llama3_8B_instruct()
+                self.llm = PdfQA.create_llama3_8B_instruct(self)
         else:
             raise ValueError("Invalid config") 
                
