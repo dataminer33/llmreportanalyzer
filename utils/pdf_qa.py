@@ -28,7 +28,7 @@ class PdfQA:
     # This way we don't need to reload models in an interactive app,
     # and the same model instance can be used across multiple user sessions
     @classmethod
-    def create_baai_large():
+    def create_baai_large(cls):
         device = "cuda" if torch.cuda.is_available() else "cpu"
         return HuggingFaceEmbeddings(model_name=EMB_BAAI_V15_LARGE, model_kwargs={"device": device})
  
