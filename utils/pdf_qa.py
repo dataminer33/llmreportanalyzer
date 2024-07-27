@@ -14,7 +14,7 @@ import streamlit as st
 
 
 class PdfQA:
-    def __init__(self,config:dict = {},openai_api_key, huggingface_api_key):
+    def __init__(self,openai_api_key, huggingface_api_key,config:dict = {}):
         self.config = config
         self.embedding = None
         self.vectordb = None
