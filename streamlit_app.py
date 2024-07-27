@@ -5,8 +5,13 @@ from utils.constants import *
 from utils.pdf_qa import PdfQA
 
 
-OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-HUGGINGFACE_KEY = st.secrets["HUGGINGFACE_API_KEY"]
+try:
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+    HUGGINGFACE_KEY = st.secrets["HUGGINGFACE_API_KEY"]
+except KeyError as e:
+    st.error(f"Could not find {e} in secrets. Have you set it up correctly?")
+    st.stop()
+
 os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 os.environ['HUGGINGFACE_KEY'] = HUGGINGFACE_KEY
 
