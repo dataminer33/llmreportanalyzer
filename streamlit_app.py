@@ -178,9 +178,6 @@ with st.sidebar:
     if st.button("Submit") and pdf_file is not None:
         with st.spinner(text="Processing PDF and Generating Embeddings.."):
             try:
-                if llm != st.session_state.get("current_llm"):
-                    st.session_state["pdf_qa_model"].reset()  # Reset the model
-                    st.session_state["current_llm"] = llm
 
                 pdf_path = os.path.join(os.path.dirname(__file__), pdf_file.name)
                 
