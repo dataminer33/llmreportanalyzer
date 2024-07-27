@@ -3,7 +3,9 @@ import pandas as pd
 import base64, os, re
 from utils.constants import *
 from utils.pdf_qa import PdfQA
-
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 try:
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
