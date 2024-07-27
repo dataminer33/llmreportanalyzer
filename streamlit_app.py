@@ -5,8 +5,10 @@ from utils.constants import *
 from utils.pdf_qa import PdfQA
 from utils.api_keys import *
 
-
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+HUGGINGFACE_KEY = st.secrets["HUGGINGFACE_API_KEY"]
 os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+os.environ['HUGGINGFACE_KEY'] = HUGGINGFACE_KEY
 
 # Streamlit app code
 st.set_page_config(
