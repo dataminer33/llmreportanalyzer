@@ -7,9 +7,9 @@ from langchain.chains import RetrievalQA
 from langchain.embeddings import  HuggingFaceEmbeddings
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_huggingface import HuggingFaceEndpoint
-from constants import *
+from utils.constants import *
 import streamlit as st
-from api_keys import *
+
 
 
 
