@@ -7,13 +7,13 @@ from utils.pdf_qa import PdfQA
 
 try:
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-    HUGGINGFACE_KEY = st.secrets["HUGGINGFACE_API_KEY"]
+    HUGGINGFACE_API_KEY = st.secrets["HUGGINGFACE_API_KEY"]
 except KeyError as e:
     st.error(f"Could not find {e} in secrets. Have you set it up correctly?")
     st.stop()
 
 os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
-os.environ['HUGGINGFACE_KEY'] = HUGGINGFACE_KEY
+os.environ['HUGGINGFACE_API_KEY'] = HUGGINGFACE_API_KEY
 
 # Streamlit app code
 st.set_page_config(
