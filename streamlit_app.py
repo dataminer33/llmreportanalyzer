@@ -3,7 +3,7 @@ import pandas as pd
 import base64, os, re
 from utils.constants import *
 from utils.pdf_qa import PdfQA
-from utils.api_keys import *
+
 
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 HUGGINGFACE_KEY = st.secrets["HUGGINGFACE_API_KEY"]
