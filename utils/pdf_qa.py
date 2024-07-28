@@ -2,10 +2,9 @@ import torch, os, re, openai
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
-from langchain.embeddings import  HuggingFaceEmbeddings
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain_community.embeddings import  HuggingFaceEmbeddings
 from langchain_huggingface import HuggingFaceEndpoint
 from utils.constants import *
 import streamlit as st
