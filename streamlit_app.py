@@ -254,7 +254,6 @@ with tab2:
         try:
             st.session_state["pdf_qa_model"].retreival_qa_chain()
             answer = st.session_state["pdf_qa_model"].answer_query(st, question)
-            st.write(f"{answer}")
         except Exception as e:
             st.error(f"Error answering the question: {str(e)}")
 
