@@ -1,5 +1,5 @@
 # Constants
-EMB_BAAI_V15_LARGE = "BAAI/bge-large-en-v1.5"
+EMB_BAAI_V15_LARGE = "sentence-transformers/multi-qa-mpnet-base-dot-v1 "
 
 
 LLM_OPENAI_GPT35 = "gpt-3.5-turbo"
