@@ -7,7 +7,6 @@ from langchain.chains import RetrievalQA
 from langchain_community.embeddings import  HuggingFaceEmbeddings
 from langchain_huggingface import HuggingFaceEndpoint
 from utils.constants import *
-from sentence_transformers import SentenceTransformer
 
 
 
@@ -28,8 +27,8 @@ class PdfQA:
     # This way we don't need to reload models in an interactive app,
     # and the same model instance can be used across multiple user sessions
 
-    def create_baai_large():
-        return HuggingFaceEmbeddings(model_name='sentence-transformers/multi-qa-mpnet-base-dot-v1')
+    def create_mpnet_base_v1():
+        return HuggingFaceEmbeddings(model_name=EMB_MPNET_BASE_V1)
         
 
     #@classmethod
@@ -39,14 +38,14 @@ class PdfQA:
 
 
     def init_embeddings(self) -> None:
-        if self.config["embedding"] == EMB_BAAI_V15_LARGE:
-            self.embedding = PdfQA.create_baai_large()
+        if self.config["embedding"] == EMB_MPNET_BASE_V1:
+            self.embedding = PdfQA.create_mpnet_base_v1()
         else:
             self.embedding = None 
 
     def init_models(self) -> None:
         """ Initialize LLM models based on config """
-        if (self.config["llm"] == LLM_OPENAI_GPT35) or (self.config["llm"] == LLM_OPENAI_GPT4O) or (self.config["llm"] == LLM_OPENAI_GPT4O_MINI):
+        if (self.config["llm"] == LLM_OPENAI_GPT35) or (self.config["llm"] == LLM_OPENAI_GPT4O) or (self.config["llm"] == LLM_OPENAI_GPT4O_MINI) or (self.config["llm"] == LLM_OPENAI_GPT4):
             openai.api_key = self.openai_api_key
             pass
         elif self.config["llm"] == LLM_LLAMA3_INSTRUCT:
@@ -86,7 +85,7 @@ class PdfQA:
         
         self.retriever = self.vectordb.as_retriever(search_type="similarity", search_kwargs={"k": 5})
 
-        if (self.config["llm"] == LLM_OPENAI_GPT35) or (self.config["llm"] == LLM_OPENAI_GPT4O) or (self.config["llm"] == LLM_OPENAI_GPT4O_MINI):
+        if (self.config["llm"] == LLM_OPENAI_GPT35) or (self.config["llm"] == LLM_OPENAI_GPT4O) or (self.config["llm"] == LLM_OPENAI_GPT4O_MINI) or (self.config["llm"] == LLM_OPENAI_GPT4):
             self.qa = RetrievalQA.from_chain_type(
                 llm=ChatOpenAI(model_name=self.config["llm"], temperature=0),
                 chain_type="stuff",

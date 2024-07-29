@@ -149,8 +149,8 @@ def load_llm(llm):
 
 #@st.cache_resource
 def load_emb(emb):
-    if emb == EMB_BAAI_V15_LARGE:
-        return PdfQA.create_baai_large()
+    if emb == EMB_MPNET_BASE_V1:
+        return PdfQA.create_mpnet_base_v1()
     else:
         raise ValueError("Invalid embedding setting")
 
@@ -171,8 +171,8 @@ with st.sidebar:
     st.header("Configuration")
 
 
-    emb = EMB_BAAI_V15_LARGE
-    llm = st.radio("**Select LLM Model**", [LLM_OPENAI_GPT35,LLM_OPENAI_GPT4O_MINI,LLM_OPENAI_GPT4O, LLM_LLAMA3_INSTRUCT], index=1)
+    emb = EMB_MPNET_BASE_V1
+    llm = st.radio("**Select LLM Model**", [LLM_OPENAI_GPT35,LLM_OPENAI_GPT4O_MINI,LLM_OPENAI_GPT4O,LLM_OPENAI_GPT4, LLM_LLAMA3_INSTRUCT], index=1)
     pdf_file = st.file_uploader("**Upload PDF**", type="pdf")
 
     if st.button("Submit") and pdf_file is not None:
