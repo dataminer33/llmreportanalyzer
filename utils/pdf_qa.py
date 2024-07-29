@@ -29,8 +29,7 @@ class PdfQA:
     # and the same model instance can be used across multiple user sessions
 
     def create_baai_large():
-        temp = SentenceTransformer('sentence-transformers/multi-qa-mpnet-base-dot-v1')
-        return HuggingFaceEmbeddings(model_name=temp)
+        return HuggingFaceEmbeddings(model_name='sentence-transformers/multi-qa-mpnet-base-dot-v1')
         
 
     #@classmethod
