@@ -4,7 +4,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI
 from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
-#from langchain_community.embeddings import  HuggingFaceEmbeddings
+from langchain_community.embeddings import  HuggingFaceEmbeddings
 from langchain_huggingface import HuggingFaceEndpoint
 from utils.constants import *
 from sentence_transformers import SentenceTransformer
@@ -29,8 +29,9 @@ class PdfQA:
     # and the same model instance can be used across multiple user sessions
 
     def create_baai_large():
-        #return HuggingFaceEmbeddings(model_name=EMB_BAAI_V15_LARGE)
-        return SentenceTransformer('sentence-transformers/multi-qa-mpnet-base-dot-v1')
+        temp = SentenceTransformer('sentence-transformers/multi-qa-mpnet-base-dot-v1')
+        return HuggingFaceEmbeddings(model_name=temp)
+        
 
     #@classmethod
     def create_llama3_8B_instruct(self,temp = 0.01, max_new_tokens = 128):
