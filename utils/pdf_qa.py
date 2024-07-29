@@ -4,8 +4,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI
 from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
-from langchain_community.embeddings import  HuggingFaceEmbeddings
-from langchain_huggingface import HuggingFaceEndpoint
+#from langchain_community.embeddings import  HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEndpoint, HuggingFaceEmbeddings
 from utils.constants import *
 
 
