@@ -1,4 +1,4 @@
-import torch, os, re, openai
+import  os, re, openai
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI
@@ -7,7 +7,7 @@ from langchain.chains import RetrievalQA
 from langchain_community.embeddings import  HuggingFaceEmbeddings
 from langchain_huggingface import HuggingFaceEndpoint
 from utils.constants import *
-import streamlit as st
+#import streamlit as st
 
 
 
@@ -29,8 +29,7 @@ class PdfQA:
     # and the same model instance can be used across multiple user sessions
 
     def create_baai_large():
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        return HuggingFaceEmbeddings(model_name=EMB_BAAI_V15_LARGE, model_kwargs={"device": device})
+        return HuggingFaceEmbeddings(model_name=EMB_BAAI_V15_LARGE)
  
 
     #@classmethod
