@@ -61,11 +61,6 @@ class PdfQA:
         """
         creates vector db for the embeddings and persists them or loads a vector db from the persist directory
         """
-        if self.vectordb:
-            st.write("Closing current vectordb connection")
-            self.vectordb.delete_collection()
-            self.vectordb = None
-
 
         pdf_path = self.config.get("pdf_path",None)
         st.write(f"PDF Path: {pdf_path}")
@@ -109,7 +104,7 @@ class PdfQA:
                 
             )
 
-    def answer_query(self, question: str) -> str:
+    def answer_query(self, st, question: str) -> str:
         """
         Answer the question
         """
