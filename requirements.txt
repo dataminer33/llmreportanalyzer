@@ -10,3 +10,4 @@ cryptography~=3.4.7
 chromadb~=0.5.3
 sentence_transformers 
 pysqlite3-binary 
+langchain_huggingface~=0.0.3 
