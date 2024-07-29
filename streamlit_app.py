@@ -221,7 +221,7 @@ with tab1:
                 relevant_pages  = []
                 for question in questions_df['Questions']:
                 
-                    result = st.session_state["pdf_qa_model"].answer_query(question + 'Give me an answer: yes or no answer and reasoning from the context')
+                    result = st.session_state["pdf_qa_model"].answer_query(st, question + 'Give me an answer: yes or no answer and reasoning from the context')
                     answers.append(result["result"])
                     relevant_pages.append([doc.metadata.get("page", None) for doc in result["source_documents"]])
 
