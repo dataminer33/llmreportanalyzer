@@ -63,7 +63,6 @@ class PdfQA:
         """
 
         pdf_path = self.config.get("pdf_path",None)
-        st.write(f"PDF Path: {pdf_path}")
         if pdf_path:
             loader = PyPDFLoader(pdf_path)
             documents = loader.load()
