@@ -249,7 +249,7 @@ with tab1:
 with tab2:
     st.header("Interactive Q&A")
     question = st.text_input('Ask a question', 'What is this document?')
-
+    st.write(" ")
     if st.button("Answer"):
         try:
             st.session_state["pdf_qa_model"].retreival_qa_chain()
