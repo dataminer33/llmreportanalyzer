@@ -110,7 +110,7 @@ class PdfQA:
             raise ValueError("QA chain not initialized. Call retreival_qa_chain() first.")
         
         try:
-            answer_dict = self.qa({"query": question})
+            answer_dict = self.qa.invoke({"query": question})
             st.write("Raw answer_dict:", answer_dict)
             
             if "result" in answer_dict:
