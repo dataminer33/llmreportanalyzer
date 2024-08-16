@@ -172,7 +172,7 @@ with st.sidebar:
 
 
     emb = EMB_MPNET_BASE_V1
-    llm = st.radio("**Select LLM Model**", [LLM_LLAMA3_INSTRUCT], index=1)
+    llm = st.radio("**Select LLM Model**", [LLM_LLAMA3_INSTRUCT], index=0)
     pdf_file = st.file_uploader("**Upload PDF**", type="pdf")
 
     if st.button("Submit") and pdf_file is not None:
