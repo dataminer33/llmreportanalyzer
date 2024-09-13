@@ -1,5 +1,5 @@
 # LLmReportAnalyzer
-![F1 Data Analysis](static/images/preview.png)
+![LLmReportAnalyzer](static/images/preview.png)
 
 ## Overview
 This Streamlit application provides an interactive tool to analyze and extract insights from PDF reports using OpenAI or Meta's large language models (LLMs). It is designed for automated report analysis and QA tasks, offering a user-friendly interface to facilitate in-depth exploration of report contents.
@@ -10,7 +10,7 @@ This Streamlit application provides an interactive tool to analyze and extract i
 Perform detailed analysis of PDF reports. The application utilizes LLMs to extract key insights, trends, and summaries from the content.
 
 ### Interactive Interface
-Engage with the data through an interactive Streamlit interface. The tool supports various visualization options to better understand the analyzed data.
+Engage with the data through an interactive Streamlit interface. The tool supports various visualization options to understand the analyzed data better.
 
 ### Customizable Analysis
 Tailor the analysis according to your needs by adjusting settings and parameters. The application is flexible and scalable for different report analysis requirements.
