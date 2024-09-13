@@ -138,7 +138,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 if "pdf_qa_model" not in st.session_state:
     st.session_state["pdf_qa_model"]:PdfQA = PdfQA(openai_api_key=OPENAI_API_KEY, huggingface_api_key=HUGGINGFACE_API_KEY)  # Initialisation
 
-#@st.cache_resource
+@st.cache_resource
 def load_llm(llm):
     if (llm == LLM_OPENAI_GPT35) or (llm == LLM_OPENAI_GPT4O) or (llm == LLM_OPENAI_GPT4O_MINI):
         pass
@@ -147,7 +147,7 @@ def load_llm(llm):
     else:
         raise ValueError("Invalid LLM setting")
 
-#@st.cache_resource
+@st.cache_resource
 def load_emb(emb):
     if emb == EMB_MPNET_BASE_V1:
         return PdfQA.create_mpnet_base_v1()
