@@ -17,6 +17,8 @@ Tailor the analysis according to your needs by adjusting settings and parameters
 
 ## How to Use
 
+**Disclaimer**: The app is optimized for dark mode. Some elements may not display correctly if your browser is set to light mode. We recommend switching to dark mode for the best experience.
+
 1. **Upload a PDF Report**
    - Use the file uploader in the sidebar to select and upload the PDF report you want to analyze.
 
