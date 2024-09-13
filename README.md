@@ -1,4 +1,4 @@
-# LLmReportAnalyzer
+# LLMReportAnalyzer
 ![LLmReportAnalyzer](static/images/preview.png)
 
 ## Overview
