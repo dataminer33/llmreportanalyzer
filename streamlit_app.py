@@ -3,24 +3,14 @@ import pandas as pd
 import base64, os, re
 from utils.constants import *
 from utils.pdf_qa import PdfQA
-__import__('pysqlite3')
 import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
-try:
-    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-    HUGGINGFACE_API_KEY = st.secrets["HUGGINGFACE_API_KEY"]
-except KeyError as e:
-    st.error(f"Could not find {e} in secrets. Have you set it up correctly?")
-    st.stop()
 
-os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
-os.environ['HUGGINGFACE_API_KEY'] = HUGGINGFACE_API_KEY
 
 # Streamlit app code
 st.set_page_config(
     page_title='Report Analysis Tool',
-    page_icon='🌿',
+    page_icon='🧮',
     layout='wide',
     initial_sidebar_state='auto',
 )
@@ -294,18 +284,24 @@ with tab2:
         except Exception as e:
             st.error(f"Error answering the question: {str(e)}")
 
-eco_tips = [
-    "Turn off lights when you leave a room to save energy.",
-    "Use a reusable water bottle instead of disposable plastic ones.",
-    "Try carpooling or using public transport to reduce carbon emissions.",
-    "Plant a tree or start a small garden to support local biodiversity.",
-    "Reduce meat consumption to lower your carbon footprint.",
+key_features = [
+    "Efficient document processing and analysis",
+    "Advanced natural language understanding",
+    "Customizable question-answering system",
+    "Batch processing for multiple queries",
+    "Integration with state-of-the-art language models"
 ]
 
 st.sidebar.markdown("---")
-st.sidebar.markdown("### 💡 Eco Tip of the Day")
-st.sidebar.info(eco_tips[pd.Timestamp.now().day % len(eco_tips)])
+st.sidebar.markdown("### 🔑 Key Features")
+for feature in key_features:
+    st.sidebar.markdown(f"- {feature}")
 
 # Footer
 st.markdown("---")
-st.markdown("Built with ❤️ for a sustainable future.")
+st.markdown("""
+    <div style='text-align: center;'>
+        <p>Developed by Alexandre Da Silva | © 2024 All Rights Reserved</p>
+        <p>Empowering businesses with intelligent document analysis</p>
+    </div>
+    """, unsafe_allow_html=True)
