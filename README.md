@@ -48,10 +48,11 @@ The application processes PDF reports uploaded by the user. It uses OpenAI's API
    pip install -r requirements.txt
    \`\`\`
 
-4. Set up your OpenAI API key:
-   - Add your OpenAI API key in a file named \`api_keys.py\`:
+4. Set up your OpenAI API and HUGGINGFACE API keys:
+   - Add your OpenAI API and HUGGINGFACE API keys in a file named \`constants.py\` in the utils folder:
      \`\`\`python
      OPENAI_API_KEY = 'your_openai_api_key'
+     HUGGINGFACE_API_KEY = 'your_huggingface_api_key'
      \`\`\`
 
 ## Usage
@@ -66,4 +67,4 @@ The application processes PDF reports uploaded by the user. It uses OpenAI's API
 ## Acknowledgments
 
 - Thanks to the Streamlit community for creating an amazing tool for data visualization.
-- Special thanks to OpenAI for providing the powerful language models used in this application.
+- Special thanks to OpenAI and Meta for providing the powerful language models used in this application.
