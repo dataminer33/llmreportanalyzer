@@ -32,72 +32,72 @@ def get_img_as_base64(file):
         data = f.read()
     return base64.b64encode(data).decode()
 
-img = get_img_as_base64("static/images/nature-sustainable-background.jpeg")
+img = get_img_as_base64("static/images/background_vq.png")
 
 
-page_bg_img = f"""
+page_bg_img = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-body {{
+body {
     font-family: 'Poppins', sans-serif;
-    color: #2c3e50;
-}}
+    color: #ffffff;
+    background-color: #001a33;
+}
 
-[data-testid="stAppViewContainer"] > .main {{
-    background-image: url("data:image/png;base64,{img}");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}}
+[data-testid="stAppViewContainer"] > .main {
+    background-color: #001a33;
+}
 
-[data-testid="stSidebar"] > div:first-child {{
-    background-color: #e0f2f1;
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%2380cbc4' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
-}}
+[data-testid="stSidebar"] > div:first-child {
+    background-color: #002b4d;
+    background-image: linear-gradient(315deg, #002b4d 0%, #001a33 74%);
+}
 
-.stApp {{
-    background-color: rgba(255, 255, 255, 0.7);
-}}
+.stApp {
+    background-color: #001a33;
+}
 
-h1, h2, h3 {{
-    color: #1a5f7a;
-}}
+h1, h2, h3 {
+    color: #00bfff;
+}
 
-.stButton>button {{
-    background-color: #4CAF50;
-    color: white;
+.stButton>button {
+    background-color: #00bfff;
+    color: #001a33;
     border: none;
     border-radius: 4px;
     padding: 0.5rem 1rem;
     font-weight: 600;
     transition: all 0.3s ease;
-}}
+}
 
-.stButton>button:hover {{
-    background-color: #45a049;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}}
+.stButton>button:hover {
+    background-color: #0099cc;
+    box-shadow: 0 0 15px rgba(0,191,255,0.5);
+}
 
-.stTextInput>div>div>input {{
-    background-color: #f1f8e9;
+.stTextInput>div>div>input {
+    background-color: #002b4d;
+    color: #ffffff;
+    border: 1px solid #00bfff;
     border-radius: 4px;
-}}
+}
 
-.custom-info-box {{
-    background-color: #e7f3fe;
-    border-left: 6px solid #2196F3;
+.custom-info-box {
+    background-color: #003366;
+    border-left: 6px solid #00bfff;
     margin-bottom: 15px;
     padding: 16px;
     border-radius: 4px;
-}}
+}
 
-.stTabs [data-baseweb="tab-list"] {{
+.stTabs [data-baseweb="tab-list"] {
     gap: 24px;
-}}
+    border-bottom: 1px solid #00bfff;
+}
 
-.stTabs [data-baseweb="tab"] {{
+.stTabs [data-baseweb="tab"] {
     height: 60px;
     white-space: pre-wrap;
     background-color: transparent !important;
@@ -105,28 +105,65 @@ h1, h2, h3 {{
     gap: 1px;
     padding-top: 10px;
     padding-bottom: 10px;
-}}
+    color: #ffffff;
+}
 
-.stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {{
+.stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
     font-size: 24px;
     font-weight: 600;
-}}
+}
 
-.stTabs [data-baseweb="tab-highlight"] {{
-    background-color: #4CAF50 !important;
-}}
+.stTabs [data-baseweb="tab-highlight"] {
+    background-color: #00bfff !important;
+}
 
-.stTabs [data-baseweb="tab"][aria-selected="true"] {{
-    color: #4CAF50 !important;
-}}
-[data-testid="stHeader"] {{
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    color: #00bfff !important;
+}
+
+[data-testid="stHeader"] {
     background-color: rgba(0,0,0,0);
-}}
+}
 
-[data-testid="stToolbar"] {{
+[data-testid="stToolbar"] {
     right: 2rem;
-}}
+}
 
+.stSelectbox select {
+    background-color: #002b4d;
+    color: #ffffff;
+    border: 1px solid #00bfff;
+}
+
+.stCheckbox label {
+    color: #ffffff;
+}
+
+.stDataFrame {
+    background-color: #002b4d;
+    color: #ffffff;
+}
+
+.stDataFrame [data-testid="stTable"] {
+    background-color: #003366;
+}
+
+p, li, span {
+    color: #ffffff;
+}
+
+[data-testid="stFileUploader"] {
+    background-color: #002b4d;
+    border: 1px dashed #00bfff;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.stAlert {
+    background-color: #003366;
+    color: #ffffff;
+    border-left-color: #00bfff;
+}
 </style>
 """
 
@@ -149,7 +186,7 @@ def load_llm(llm):
 
 @st.cache_resource
 def load_emb(emb):
-    if emb == EMB_MPNET_BASE_V1:
+    if emb == EMB_GTE_BASE:
         return PdfQA.create_mpnet_base_v1()
     else:
         raise ValueError("Invalid embedding setting")
@@ -171,7 +208,7 @@ with st.sidebar:
     st.header("Configuration")
 
 
-    emb = EMB_MPNET_BASE_V1
+    emb = EMB_GTE_BASE
     llm = st.radio("**Select LLM Model**", [LLM_LLAMA3_INSTRUCT], index=0)
     pdf_file = st.file_uploader("**Upload PDF**", type="pdf")
 

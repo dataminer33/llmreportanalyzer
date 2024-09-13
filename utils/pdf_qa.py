@@ -28,7 +28,7 @@ class PdfQA:
     # and the same model instance can be used across multiple user sessions
 
     def create_mpnet_base_v1():
-        return HuggingFaceEmbeddings(model_name=EMB_MPNET_BASE_V1)
+        return HuggingFaceEmbeddings(model_name=EMB_GTE_BASE)
         
 
     #@classmethod
@@ -38,7 +38,7 @@ class PdfQA:
 
 
     def init_embeddings(self) -> None:
-        if self.config["embedding"] == EMB_MPNET_BASE_V1:
+        if self.config["embedding"] == EMB_GTE_BASE:
             self.embedding = PdfQA.create_mpnet_base_v1()
         else:
             self.embedding = None 

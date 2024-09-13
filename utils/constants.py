@@ -1,5 +1,5 @@
 # Constants
-EMB_MPNET_BASE_V1 = "sentence-transformers/multi-qa-mpnet-base-dot-v1"
+EMB_GTE_BASE = "thenlper/gte-base"
 
 
 LLM_OPENAI_GPT35 = "gpt-3.5-turbo"
