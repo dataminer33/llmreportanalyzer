@@ -167,7 +167,7 @@ if "pdf_qa_model" not in st.session_state:
 
 @st.cache_resource
 def load_llm(llm):
-    if (llm == LLM_OPENAI_GPT35) or (llm == LLM_OPENAI_GPT4O) or (llm == LLM_OPENAI_GPT4O_MINI):
+    if (llm == LLM_OPENAI_GPT35) or (llm == LLM_OPENAI_GPT4O) or (llm == LLM_OPENAI_GPT4O_MINI) or (llm == LLM_OPENAI_GPT4):
         pass
     elif llm == LLM_LLAMA3_INSTRUCT:
         return PdfQA.create_llama3_8B_instruct()
@@ -199,7 +199,7 @@ with st.sidebar:
 
 
     emb = EMB_GTE_BASE
-    llm = st.radio("**Select LLM Model**", [LLM_LLAMA3_INSTRUCT], index=0)
+    llm = st.radio("**Select LLM Model**", [LLM_OPENAI_GPT35,LLM_OPENAI_GPT4O,LLM_OPENAI_GPT4O_MINI,LLM_OPENAI_GPT4,LLM_LLAMA3_INSTRUCT], index=4)
     pdf_file = st.file_uploader("**Upload PDF**", type="pdf")
 
     if st.button("Submit") and pdf_file is not None:
