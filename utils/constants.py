@@ -2,7 +2,7 @@
 EMB_GTE_BASE = "thenlper/gte-base"
 
 OPENAI_API_KEY = ""
-HUGGINGFACE_API_KEY = "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"
+HUGGINGFACE_API_KEY = ""
 
 LLM_OPENAI_GPT35 = "gpt-3.5-turbo"
 LLM_OPENAI_GPT4O = "gpt-4o"
